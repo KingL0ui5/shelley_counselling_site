@@ -1,3 +1,29 @@
-<div>
-Welcome 
-</div>
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import AboutSection from '../components/AboutSection.astro';
+import ServicesSection from '../components/ServicesSection.astro';
+import HowItWorks from '../components/HowItWorks.astro';
+import FeesFaq from '../components/FeesFaq.astro';
+import ContactSection from '../components/ContactSection.astro';
+import CrisisSupport from '../components/CrisisSupport.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout 
+	title="Shelley Liu Counselling | MBACP Registered Online Counsellor"
+	description="Warm, confidential, person-centred online counselling with Shelley Liu (MBACP). Specialising in anxiety, depression, burnout, bereavement, and life transitions."
+>
+	<Header />
+	<main>
+		<Hero />
+		<AboutSection />
+		<ServicesSection />
+		<HowItWorks />
+		<FeesFaq />
+		<ContactSection />
+		<CrisisSupport />
+	</main>
+	<Footer />
+</Layout>

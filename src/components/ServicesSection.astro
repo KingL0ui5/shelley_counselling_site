@@ -1,0 +1,87 @@
+---
+const services = [
+	{
+		title: 'Anxiety, Panic & Chronic Stress',
+		description: 'Managing generalized anxiety, intrusive worrying, social stress, panic symptoms, and nervous system regulation.'
+	},
+	{
+		title: 'Low Mood, Depression & Feeling Stuck',
+		description: 'Navigating periods of sadness, loss of enthusiasm, emotional numbness, and uncovering a renewed sense of purpose and vitality.'
+	},
+	{
+		title: 'Workplace Burnout & Career Pressures',
+		description: 'Support for professionals experiencing intense workplace demands, imposter syndrome, corporate fatigue, and boundary management.'
+	},
+	{
+		title: 'Bereavement, Loss & Grief',
+		description: 'A compassionate, holding space for processing grief, including pet bereavement, pregnancy/baby loss, and major life changes.'
+	},
+	{
+		title: 'Relationships, Loneliness & Attachment',
+		description: 'Exploring relational patterns, attachment difficulties, fear of abandonment, and building healthier interpersonal connections.'
+	},
+	{
+		title: 'Self-Esteem & Inner Critic',
+		description: 'Challenging deep-seated feelings of inadequacy, perfectionism, self-doubt, and fostering authentic self-compassion.'
+	},
+	{
+		title: 'Addiction & Coping Habits',
+		description: 'Non-judgmental exploration of behavioral cycles, habits, substance reliance, and identifying constructive alternatives.'
+	},
+	{
+		title: 'Life Transitions & Identity',
+		description: 'Guidance through major career shifts, parental milestones, cross-cultural adjustment, or making sense of who you are.'
+	}
+];
+---
+
+<section id="services" class="py-20 md:py-28 bg-stone-100/60">
+	<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+		
+		<!-- Section Header -->
+		<div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+			<span class="text-xs font-semibold tracking-wider uppercase text-emerald-800 flex items-center justify-center gap-1.5">
+				<span class="w-1.5 h-1.5 rounded-full bg-[#5ad01f]"></span>
+				Areas of Support
+			</span>
+			<h2 class="font-serif text-3xl sm:text-4xl text-stone-900 leading-tight">
+				How Online Therapy Can Help You
+			</h2>
+			<p class="text-stone-600 text-base sm:text-lg font-light leading-relaxed">
+				Every person's journey is unique. Whatever challenges you are facing, we will work at your pace to bring clarity, healing, and meaningful change.
+			</p>
+		</div>
+
+		<!-- Services Grid -->
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+			{services.map((item) => (
+				<div class="bg-white rounded-3xl p-6 border border-stone-200/80 shadow-xs hover:shadow-md hover:border-emerald-300 transition-all duration-300 flex flex-col justify-between group">
+					<div class="space-y-3">
+						<div class="w-10 h-10 rounded-2xl bg-emerald-50 text-emerald-800 flex items-center justify-center group-hover:bg-[#5ad01f] group-hover:text-black transition-colors duration-300">
+							<svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+							</svg>
+						</div>
+						<h3 class="font-serif text-lg font-medium text-stone-900 group-hover:text-emerald-950 transition-colors">
+							{item.title}
+						</h3>
+						<p class="text-xs sm:text-sm text-stone-600 leading-relaxed font-light">
+							{item.description}
+						</p>
+					</div>
+				</div>
+			))}
+		</div>
+
+		<!-- Bottom Callout Note -->
+		<div class="mt-12 text-center bg-white/90 backdrop-blur-sm border border-stone-200 rounded-2xl p-6 max-w-2xl mx-auto space-y-1">
+			<p class="text-sm text-stone-800 font-medium">
+				Experiencing something not listed here?
+			</p>
+			<p class="text-xs text-stone-500 font-light">
+				Therapy is open to whatever you are carrying. You are welcome to reach out to discuss your personal circumstances in an initial conversation.
+			</p>
+		</div>
+
+	</div>
+</section>

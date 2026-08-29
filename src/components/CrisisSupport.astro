@@ -1,0 +1,113 @@
+---
+const crisisResources = [
+	{
+		name: 'Emergency Services',
+		number: '999',
+		actionHref: 'tel:999',
+		actionLabel: 'Call 999',
+		badge: 'Immediate Danger',
+		badgeColor: 'bg-rose-100 text-rose-800 border-rose-200',
+		description: 'If you or someone else is at immediate risk of harm or in a life-threatening emergency, call 999 or attend your nearest hospital A&E.'
+	},
+	{
+		name: 'Samaritans',
+		number: '116 123',
+		actionHref: 'tel:116123',
+		actionLabel: 'Call 116 123',
+		badge: 'Free 24/7 Helpline',
+		badgeColor: 'bg-emerald-100 text-emerald-900 border-emerald-200',
+		description: 'Free, confidential listening service available 24 hours a day, 365 days a year for anyone who needs someone to talk to.'
+	},
+	{
+		name: 'Shout Crisis Text Line',
+		number: 'Text SHOUT to 85258',
+		actionHref: 'sms:85258?&body=SHOUT',
+		actionLabel: 'Text 85258',
+		badge: 'Free 24/7 Text Support',
+		badgeColor: 'bg-blue-100 text-blue-900 border-blue-200',
+		description: 'Free, confidential, 24/7 text messaging support service if you are feeling overwhelmed, anxious, or suicidal and prefer not to talk on the phone.'
+	},
+	{
+		name: 'NHS Mental Health',
+		number: '111',
+		actionHref: 'tel:111',
+		actionLabel: 'Call 111',
+		badge: '24/7 NHS Advice',
+		badgeColor: 'bg-stone-200 text-stone-800 border-stone-300',
+		description: 'Free NHS service for urgent mental health support, advice, and direct triage to your local NHS crisis team.'
+	}
+];
+---
+
+<section id="crisis-support" class="py-16 sm:py-20 bg-stone-100/90 border-t-2 border-amber-300/80">
+	<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+		
+		<!-- Prominent Alert Banner Header -->
+		<div class="bg-white rounded-3xl p-8 sm:p-10 border border-stone-200 shadow-md space-y-8">
+			
+			<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6 border-b border-stone-200">
+				<div class="flex items-center gap-3">
+					<div class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-900 flex items-center justify-center shrink-0 border border-amber-200">
+						<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+						</svg>
+					</div>
+					<div>
+						<span class="text-xs font-bold uppercase tracking-widest text-amber-800">
+							Important Safety Notice
+						</span>
+						<h2 class="font-serif text-2xl sm:text-3xl font-medium text-stone-900 leading-snug">
+							Emergency &amp; Immediate Crisis Support
+						</h2>
+					</div>
+				</div>
+				<div class="text-xs font-semibold px-3 py-1.5 rounded-full bg-rose-50 text-rose-800 border border-rose-200 flex items-center gap-1.5">
+					<span class="w-2 h-2 rounded-full bg-rose-600 animate-pulse"></span>
+					24/7 Immediate Help Available
+				</div>
+			</div>
+
+			<!-- Notice Paragraph -->
+			<div class="text-stone-700 text-sm sm:text-base leading-relaxed space-y-2 max-w-4xl">
+				<p>
+					<strong>Please note:</strong> Shelley Liu Counselling is an appointment-based therapy practice and is <strong>not an emergency or crisis intervention service</strong>.
+				</p>
+				<p class="text-stone-600 font-light">
+					If you are in immediate danger, feeling unable to keep yourself safe, or experiencing an overwhelming acute mental health crisis, please reach out directly to the free, 24/7 professional support services below:
+				</p>
+			</div>
+
+			<!-- Crisis Resource Cards Grid -->
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 pt-2">
+				{crisisResources.map((res) => (
+					<div class="bg-[#faf9f6] rounded-2xl p-5 border border-stone-200/90 shadow-xs flex flex-col justify-between space-y-4 hover:border-stone-300 transition-colors">
+						<div class="space-y-2.5">
+							<div class="flex items-center justify-between">
+								<span class={`text-[11px] font-semibold uppercase tracking-wider px-2.5 py-0.5 rounded-full border ${res.badgeColor}`}>
+									{res.badge}
+								</span>
+							</div>
+							<h3 class="font-serif text-lg font-medium text-stone-900">
+								{res.name}
+							</h3>
+							<p class="text-xs text-stone-600 font-light leading-relaxed">
+								{res.description}
+							</p>
+						</div>
+
+						<div class="pt-2 border-t border-stone-200/60">
+							<a 
+								href={res.actionHref}
+								class="inline-flex items-center justify-center w-full py-2.5 px-4 text-xs font-bold uppercase tracking-wider text-stone-900 bg-white hover:bg-stone-100 border border-stone-300 rounded-xl shadow-xs transition-all duration-150 hover:shadow"
+							>
+								{res.actionLabel}
+							</a>
+						</div>
+					</div>
+				))}
+			</div>
+
+		</div>
+
+	</div>
+</section>

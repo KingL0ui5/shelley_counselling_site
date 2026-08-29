@@ -1,0 +1,75 @@
+---
+const steps = [
+	{
+		number: '01',
+		title: 'Initial Contact',
+		description: 'Reach out via email or the online form. We can arrange a brief, informal 15-minute introductory phone call to discuss what brings you to therapy and answer any questions.'
+	},
+	{
+		number: '02',
+		title: 'First Session',
+		description: 'Our first 50-minute video session provides space to explore your background, goals, and concerns in more depth. It is also an opportunity to see how it feels to work together.'
+	},
+	{
+		number: '03',
+		title: 'Regular Weekly Sessions',
+		description: 'We meet weekly at a dedicated time online via a secure, encrypted video platform. Consistency helps create a safe, stable container for meaningful exploration.'
+	},
+	{
+		number: '04',
+		title: 'Ongoing Reviews & Pacing',
+		description: 'We periodically review our work together to ensure therapy remains helpful and aligned with your goals, whether you prefer short-term focused work or open-ended exploration.'
+	}
+];
+---
+
+<section id="how-it-works" class="py-20 md:py-28 bg-white border-b border-stone-200/80">
+	<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+		
+		<div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+			<span class="text-xs font-semibold tracking-wider uppercase text-emerald-800 flex items-center justify-center gap-1.5">
+				<span class="w-1.5 h-1.5 rounded-full bg-[#5ad01f]"></span>
+				The Process
+			</span>
+			<h2 class="font-serif text-3xl sm:text-4xl text-stone-900 leading-tight">
+				How Online Therapy Works
+			</h2>
+			<p class="text-stone-600 text-base sm:text-lg font-light leading-relaxed">
+				Starting therapy is a significant step. Here is what you can expect from the very first contact.
+			</p>
+		</div>
+
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+			{steps.map((step) => (
+				<div class="relative flex flex-col justify-between p-6 rounded-3xl bg-[#faf9f6] border border-stone-200/80 hover:border-emerald-300 transition-all duration-300">
+					<div class="space-y-4">
+						<div class="font-serif text-3xl font-light text-emerald-800">
+							{step.number}
+						</div>
+						<h3 class="font-serif text-xl font-medium text-stone-900">
+							{step.title}
+						</h3>
+						<p class="text-xs sm:text-sm text-stone-600 leading-relaxed font-light">
+							{step.description}
+						</p>
+					</div>
+				</div>
+			))}
+		</div>
+
+		<!-- Quotes / Practice Ethos Box in Forest/Emerald Palette -->
+		<div class="mt-16 bg-emerald-950 text-white rounded-3xl p-8 sm:p-12 shadow-xl relative overflow-hidden">
+			<div class="absolute -right-12 -bottom-12 w-64 h-64 bg-[#5ad01f]/10 rounded-full blur-2xl pointer-events-none"></div>
+			<div class="relative z-10 max-w-3xl space-y-4">
+				<div class="inline-block text-[#5ad01f] text-xs font-semibold tracking-widest uppercase">
+					Client-Centred Philosophy
+				</div>
+
+				<p class="text-emerald-200 text-sm sm:text-base font-light leading-relaxed">
+					As a person-centred counsellor, I do not believe in one-size-fits-all solutions. Our therapy will be uniquely shaped around who you are, what you value, and what you need at this moment in your life.
+				</p>
+			</div>
+		</div>
+
+	</div>
+</section>

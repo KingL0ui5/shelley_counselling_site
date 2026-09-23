@@ -1,0 +1,85 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout 
+	title="Thank You | Shelley Liu Counselling Service"
+	description="Thank you for getting in touch with Shelley Liu Counselling Service. Your message has been received securely and Shelley will respond within 24 to 48 hours."
+>
+	<Header />
+	
+	<main class="py-16 md:py-24 bg-[#faf9f6] min-h-[75vh] flex items-center">
+		<div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+			
+			<div class="bg-white border border-stone-200/90 rounded-3xl p-8 sm:p-12 shadow-sm text-center space-y-6">
+				
+				<!-- Calming Success Icon -->
+				<div class="w-16 h-16 rounded-full bg-emerald-50 border border-emerald-200/80 flex items-center justify-center mx-auto text-emerald-800 shadow-2xs">
+					<svg class="w-8 h-8 text-emerald-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+					</svg>
+				</div>
+
+				<!-- Header Text -->
+				<div class="space-y-2">
+					<span class="text-xs font-semibold tracking-wider uppercase text-emerald-800 flex items-center justify-center gap-1.5">
+						<span class="w-1.5 h-1.5 rounded-full bg-[#5ad01f]"></span>
+						Message Received
+					</span>
+					<h1 class="font-serif text-3xl sm:text-4xl text-stone-900 leading-tight">
+						Thank You for Reaching Out
+					</h1>
+				</div>
+
+				<!-- Message Body -->
+				<div class="space-y-4 text-stone-600 text-sm sm:text-base font-light leading-relaxed max-w-lg mx-auto">
+					<p>
+						Your enquiry has been received securely. Reaching out can feel like the hardest step, and I appreciate you taking the time to connect.
+					</p>
+					<p>
+						I review messages personally and will reply via email, typically within <strong class="font-medium text-stone-800">24 to 48 hours</strong>, to answer any questions or discuss scheduling an initial consultation.
+					</p>
+				</div>
+
+				<!-- Reassurance Note -->
+				<div class="p-4 rounded-2xl bg-[#faf9f6] border border-stone-200/80 text-xs text-stone-600 font-light text-left space-y-1.5">
+					<div class="flex items-center gap-2 font-medium text-stone-800">
+						<svg class="w-4 h-4 text-emerald-800 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+						</svg>
+						Please check your spam or junk folder if you have not seen a reply after 48 hours.
+					</div>
+
+
+				</div>
+
+				<!-- CTA Navigation Buttons -->
+				<div class="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
+					<a 
+						href="/" 
+						class="w-full sm:w-auto px-7 py-3 rounded-full bg-emerald-900 hover:bg-emerald-950 text-white font-medium text-sm shadow-md hover:shadow-lg transition-all duration-200"
+					>
+						Return to Home Page
+					</a>
+					<a 
+						href="/#fees-faq" 
+						class="w-full sm:w-auto px-7 py-3 rounded-full bg-white hover:bg-stone-50 text-stone-800 font-medium text-sm border border-stone-300 transition-all duration-200"
+					>
+						View Fees &amp; FAQs
+					</a>
+				</div>
+
+			</div>
+
+			<!-- Urgent Crisis Disclaimer -->
+			<p class="mt-8 text-center text-xs text-stone-500 font-light leading-relaxed">
+				<strong class="font-medium text-stone-600">Need immediate help?</strong> If you or someone you know is in acute distress or experiencing a mental health emergency, please visit our <a href="/#crisis-support" class="font-medium text-emerald-900 underline hover:text-emerald-950 transition-colors">Crisis Support resources</a>.
+			</p>
+
+		</div>
+	</main>
+
+	<Footer />
+</Layout>

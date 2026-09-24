@@ -1,15 +1,35 @@
 ---
+const credentials = [
+	{
+		title: 'Clinical Experience',
+		description: 'Over 5 years supporting clients across NHS Talking Therapies and MIND counselling services.'
+	},
+	{
+		title: 'Specialist Training',
+		description: 'Metanoia Institute Person-Centred Experiential Counselling for Depression (PCE-CfD).'
+	},
+	{
+		title: 'Corporate Insights',
+		description: 'Professional background in finance, bringing lived understanding of high-pressure corporate workloads and burnout.'
+	},
+	{
+		title: 'Professional Ethics',
+		description: 'Continuous clinical supervision, ongoing professional development, and adherence to the BACP Ethical Framework.'
+	}
+];
 ---
 
 <section id="about" class="py-14 sm:py-20 md:py-28 bg-white border-y border-stone-200/80">
 	<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-		<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-14 items-start">
+		
+		<!-- Desktop Layout (lg and up) -->
+		<div class="hidden lg:grid lg:grid-cols-12 gap-10 lg:gap-14 items-start">
 			
 			<!-- Image & Caption Column -->
 			<div class="lg:col-span-4 xl:col-span-3 space-y-4 lg:pt-4">
-				<figure class="relative mx-auto max-w-[220px] sm:max-w-[260px] lg:max-w-none space-y-3 sm:space-y-3.5">
+				<figure class="relative space-y-3.5">
 					<!-- Clean Portrait Image -->
-					<div class="aspect-[4/5] rounded-2xl sm:rounded-3xl bg-stone-100 border border-stone-200 overflow-hidden shadow-md">
+					<div class="aspect-[4/5] rounded-3xl bg-stone-100 border border-stone-200 overflow-hidden shadow-md">
 						<img 
 							src="/shelley_liu.jpeg" 
 							alt="Shelley Liu - MBACP Registered Counsellor" 
@@ -19,11 +39,11 @@
 					</div>
 					
 					<!-- Compact Caption Box -->
-					<figcaption class="p-3.5 sm:p-4 rounded-xl sm:rounded-2xl bg-[#faf9f6] border border-stone-200/80 shadow-2xs space-y-1 text-center sm:text-left">
-						<div class="flex items-center justify-center sm:justify-between gap-2 flex-wrap">
-							<h3 class="font-serif text-base sm:text-lg font-medium text-stone-900">Shelley Liu</h3>
+					<figcaption class="p-4 rounded-2xl bg-[#faf9f6] border border-stone-200/80 shadow-2xs space-y-1 text-left">
+						<div class="flex items-center justify-between gap-2 flex-wrap">
+							<h3 class="font-serif text-lg font-medium text-stone-900">Shelley Liu</h3>
 						</div>
-						<p class="text-[11px] text-stone-600 font-light flex items-center justify-center sm:justify-start gap-1.5">
+						<p class="text-xs text-stone-600 font-light flex items-center gap-1.5">
 							<span class="w-1.5 h-1.5 rounded-full bg-[#5ad01f]"></span>
 							MBACP Registered Member
 						</p>
@@ -35,16 +55,16 @@
 							href="https://www.counselling-directory.org.uk/counsellors/shelley-liu" 
 							target="_blank" 
 							rel="noopener noreferrer"
-							class="group flex items-center justify-between p-2.5 sm:p-3 rounded-xl sm:rounded-2xl bg-[#faf9f6] hover:bg-emerald-50/70 border border-stone-200/80 hover:border-emerald-300 transition-all duration-200 shadow-2xs"
+							class="group flex items-center justify-between p-3 rounded-2xl bg-[#faf9f6] hover:bg-emerald-50/70 border border-stone-200/80 hover:border-emerald-300 transition-all duration-200 shadow-2xs"
 						>
 							<div class="flex items-center gap-2.5">
-								<div class="w-7 h-7 rounded-lg sm:rounded-xl bg-white border border-stone-200/70 flex items-center justify-center text-emerald-800 shadow-2xs group-hover:bg-[#5ad01f]/20 transition-colors">
-									<svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<div class="w-7 h-7 rounded-xl bg-white border border-stone-200/70 flex items-center justify-center text-emerald-800 shadow-2xs group-hover:bg-[#5ad01f]/20 transition-colors">
+									<svg class="w-4 h-4 text-emerald-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
 									</svg>
 								</div>
 								<div>
-									<div class="text-xs font-semibold text-stone-900 group-hover:text-emerald-950 transition-colors">
+									<div class="text-xs sm:text-sm font-semibold text-stone-900 group-hover:text-emerald-950 transition-colors">
 										Counselling Directory
 									</div>
 								</div>
@@ -58,16 +78,16 @@
 							href="https://www.bacp.co.uk/search/Register?q=shelley%20liu%20" 
 							target="_blank" 
 							rel="noopener noreferrer"
-							class="group flex items-center justify-between p-2.5 sm:p-3 rounded-xl sm:rounded-2xl bg-[#faf9f6] hover:bg-emerald-50/70 border border-stone-200/80 hover:border-emerald-300 transition-all duration-200 shadow-2xs"
+							class="group flex items-center justify-between p-3 rounded-2xl bg-[#faf9f6] hover:bg-emerald-50/70 border border-stone-200/80 hover:border-emerald-300 transition-all duration-200 shadow-2xs"
 						>
 							<div class="flex items-center gap-2.5">
-								<div class="w-7 h-7 rounded-lg sm:rounded-xl bg-white border border-stone-200/70 flex items-center justify-center text-emerald-800 shadow-2xs group-hover:bg-[#5ad01f]/20 transition-colors">
-									<svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<div class="w-7 h-7 rounded-xl bg-white border border-stone-200/70 flex items-center justify-center text-emerald-800 shadow-2xs group-hover:bg-[#5ad01f]/20 transition-colors">
+									<svg class="w-4 h-4 text-emerald-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
 									</svg>
 								</div>
 								<div>
-									<div class="text-xs font-semibold text-stone-900 group-hover:text-emerald-950 transition-colors">
+									<div class="text-xs sm:text-sm font-semibold text-stone-900 group-hover:text-emerald-950 transition-colors">
 										BACP Register
 									</div>
 								</div>
@@ -81,72 +101,44 @@
 			</div>
 
 			<!-- Text Column -->
-			<div class="lg:col-span-8 xl:col-span-9 space-y-5 sm:space-y-6">
+			<div class="lg:col-span-8 xl:col-span-9 space-y-6">
 				<div class="space-y-2">
 					<span class="text-xs font-semibold tracking-wider uppercase text-emerald-800 flex items-center gap-1.5">
 						<span class="w-1.5 h-1.5 rounded-full bg-[#5ad01f]"></span>
 						About Me
 					</span>
-					<h2 class="font-serif text-2xl sm:text-3xl lg:text-4xl text-stone-900 leading-snug sm:leading-tight">
+					<h2 class="font-serif text-3xl lg:text-4xl text-stone-900 leading-tight">
 						Compassionate, Person-Centred Support Tailored to You
 					</h2>
 				</div>
 
-				<p class="text-stone-700 text-sm sm:text-base lg:text-lg leading-relaxed font-light">
+				<p class="text-stone-700 text-base lg:text-lg leading-relaxed font-light">
 					Hello and welcome. I am a qualified, MBACP-registered counsellor providing one-to-one online therapy for adults across the UK. My practice is grounded in creating an approachable, down-to-earth, and trustworthy environment where you can speak openly without fear of judgment.
 				</p>
 				
-				<p class="text-stone-700 text-sm sm:text-base lg:text-lg leading-relaxed font-light">		
+				<p class="text-stone-700 text-base lg:text-lg leading-relaxed font-light">		
 					I work relationally and collaboratively. I believe you are the expert of your own life; my role is not to give prescriptive advice or tell you what to do, but to help you untangle complex feelings, identify repetitive patterns, and discover new perspectives that empower you to make meaningful changes.
 				</p>
 
 				<!-- Credentials & Experience Grid -->
-				<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 pt-2 sm:pt-4">
-					<div class="p-3.5 sm:p-4 rounded-xl sm:rounded-2xl bg-[#faf9f6] border border-stone-200/80 space-y-1.5 hover:border-emerald-200 transition-colors">
-						<h4 class="font-semibold text-stone-900 text-xs sm:text-sm flex items-center gap-2">
-							<span class="w-2 h-2 rounded-full bg-[#5ad01f] shrink-0"></span>
-							Clinical Experience
-						</h4>
-						<p class="text-xs text-stone-600 leading-relaxed font-light">
-							Over 5 years supporting clients across NHS Talking Therapies and MIND counselling services.
-						</p>
-					</div>
-
-					<div class="p-3.5 sm:p-4 rounded-xl sm:rounded-2xl bg-[#faf9f6] border border-stone-200/80 space-y-1.5 hover:border-emerald-200 transition-colors">
-						<h4 class="font-semibold text-stone-900 text-xs sm:text-sm flex items-center gap-2">
-							<span class="w-2 h-2 rounded-full bg-[#5ad01f] shrink-0"></span>
-							Specialist Training
-						</h4>
-						<p class="text-xs text-stone-600 leading-relaxed font-light">
-							Metanoia Institute Person-Centred Experiential Counselling for Depression (PCE-CfD).
-						</p>
-					</div>
-
-					<div class="p-3.5 sm:p-4 rounded-xl sm:rounded-2xl bg-[#faf9f6] border border-stone-200/80 space-y-1.5 hover:border-emerald-200 transition-colors">
-						<h4 class="font-semibold text-stone-900 text-xs sm:text-sm flex items-center gap-2">
-							<span class="w-2 h-2 rounded-full bg-[#5ad01f] shrink-0"></span>
-							Corporate Insights
-						</h4>
-						<p class="text-xs text-stone-600 leading-relaxed font-light">
-							Professional background in finance, bringing lived understanding of high-pressure corporate workloads and burnout.
-						</p>
-					</div>
-
-					<div class="p-3.5 sm:p-4 rounded-xl sm:rounded-2xl bg-[#faf9f6] border border-stone-200/80 space-y-1.5 hover:border-emerald-200 transition-colors">
-						<h4 class="font-semibold text-stone-900 text-xs sm:text-sm flex items-center gap-2">
-							<span class="w-2 h-2 rounded-full bg-[#5ad01f] shrink-0"></span>
-							Professional Ethics
-						</h4>
-						<p class="text-xs text-stone-600 leading-relaxed font-light">
-							Continuous clinical supervision, ongoing professional development, and adherence to the BACP Ethical Framework.
-						</p>
-					</div>
+				<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+					{credentials.map((cred) => (
+						<div class="p-4 rounded-2xl bg-[#faf9f6] border border-stone-200/80 space-y-1.5 hover:border-emerald-200 transition-colors">
+							<h4 class="font-semibold text-stone-900 text-sm sm:text-base flex items-center gap-2">
+								<span class="w-2 h-2 rounded-full bg-[#5ad01f] shrink-0"></span>
+								{cred.title}
+							</h4>
+							<p class="text-xs sm:text-sm text-stone-600 leading-relaxed font-light">
+								{cred.description}
+							</p>
+						</div>
+					))}
 				</div>
 
 				<div class="pt-2">
 					<a 
 						href="#services" 
-						class="inline-flex items-center text-sm font-semibold text-emerald-900 hover:text-emerald-950 gap-1.5 group py-1"
+						class="inline-flex items-center text-sm sm:text-base font-semibold text-emerald-900 hover:text-emerald-950 gap-1.5 group py-1"
 					>
 						Explore issues I can help you with
 						<svg class="w-4 h-4 text-[#5ad01f] transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -157,5 +149,130 @@
 			</div>
 
 		</div>
+
+		<!-- Mobile & Tablet Layout (< lg) -->
+		<div class="block lg:hidden space-y-5 sm:space-y-6">
+			
+			<!-- Section Header -->
+			<div class="space-y-2">
+				<span class="text-xs font-semibold tracking-wider uppercase text-emerald-800 flex items-center gap-1.5">
+					<span class="w-1.5 h-1.5 rounded-full bg-[#5ad01f]"></span>
+					About Me
+				</span>
+				<h2 class="font-serif text-2xl sm:text-3xl text-stone-900 leading-snug sm:leading-tight">
+					Compassionate, Person-Centred Support Tailored to You
+				</h2>
+			</div>
+
+			<!-- Image Left-Aligned with Introduction Text on the Right -->
+			<div class="flex items-start gap-3.5 sm:gap-5">
+				<!-- Left: Image & Caption -->
+				<figure class="w-32 sm:w-44 md:w-52 shrink-0 space-y-2 text-left">
+					<div class="aspect-[4/5] rounded-2xl bg-stone-100 border border-stone-200 overflow-hidden shadow-md">
+						<img 
+							src="/shelley_liu.jpeg" 
+							alt="Shelley Liu - MBACP Registered Counsellor" 
+							class="w-full h-full object-cover object-top"
+							loading="lazy"
+						/>
+					</div>
+					
+					<figcaption class="p-2 sm:p-2.5 rounded-xl bg-[#faf9f6] border border-stone-200/80 shadow-2xs space-y-0.5 text-left">
+						<h3 class="font-serif text-sm font-medium text-stone-900 leading-tight">Shelley Liu</h3>
+						<p class="text-xs text-stone-600 font-light flex items-center gap-1 leading-tight">
+							<span class="w-1.5 h-1.5 rounded-full bg-[#5ad01f] shrink-0"></span>
+							<span>MBACP Member</span>
+						</p>
+					</figcaption>
+				</figure>
+
+				<!-- Right: Introduction Text -->
+				<div class="flex-1">
+					<p class="text-stone-700 text-sm sm:text-base leading-relaxed font-light">
+						Hello and welcome. I am a qualified, MBACP-registered counsellor providing one-to-one online therapy for adults across the UK. My practice is grounded in creating an approachable, down-to-earth, and trustworthy environment where you can speak openly without fear of judgment.
+					</p>
+				</div>
+			</div>
+
+			<!-- Second Paragraph: Full Width -->
+			<p class="text-stone-700 text-base leading-relaxed font-light">		
+				I work relationally and collaboratively. I believe you are the expert of your own life; my role is not to give prescriptive advice or tell you what to do, but to help you untangle complex feelings, identify repetitive patterns, and discover new perspectives that empower you to make meaningful changes.
+			</p>
+
+			<!-- Professional Directory Links (Side-by-side on mobile/tablet) -->
+			<div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
+				<a 
+					href="https://www.counselling-directory.org.uk/counsellors/shelley-liu" 
+					target="_blank" 
+					rel="noopener noreferrer"
+					class="group flex items-center justify-between p-3 rounded-xl bg-[#faf9f6] hover:bg-emerald-50/70 border border-stone-200/80 hover:border-emerald-300 transition-all duration-200 shadow-2xs"
+				>
+					<div class="flex items-center gap-2.5">
+						<div class="w-7 h-7 rounded-lg bg-white border border-stone-200/70 flex items-center justify-center text-emerald-800 shadow-2xs group-hover:bg-[#5ad01f]/20 transition-colors shrink-0">
+							<svg class="w-4 h-4 text-emerald-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+							</svg>
+						</div>
+						<div class="text-xs sm:text-sm font-semibold text-stone-900 group-hover:text-emerald-950 transition-colors">
+							Counselling Directory
+						</div>
+					</div>
+					<svg class="w-3.5 h-3.5 text-stone-400 group-hover:text-emerald-800 group-hover:translate-x-0.5 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+					</svg>
+				</a>
+
+				<a 
+					href="https://www.bacp.co.uk/search/Register?q=shelley%20liu%20" 
+					target="_blank" 
+					rel="noopener noreferrer"
+					class="group flex items-center justify-between p-3 rounded-xl bg-[#faf9f6] hover:bg-emerald-50/70 border border-stone-200/80 hover:border-emerald-300 transition-all duration-200 shadow-2xs"
+				>
+					<div class="flex items-center gap-2.5">
+						<div class="w-7 h-7 rounded-lg bg-white border border-stone-200/70 flex items-center justify-center text-emerald-800 shadow-2xs group-hover:bg-[#5ad01f]/20 transition-colors shrink-0">
+							<svg class="w-4 h-4 text-emerald-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+							</svg>
+						</div>
+						<div class="text-xs sm:text-sm font-semibold text-stone-900 group-hover:text-emerald-950 transition-colors">
+							BACP Register
+						</div>
+					</div>
+					<svg class="w-3.5 h-3.5 text-stone-400 group-hover:text-emerald-800 group-hover:translate-x-0.5 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+					</svg>
+				</a>
+			</div>
+
+			<!-- Credentials & Experience Grid -->
+			<div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-1">
+				{credentials.map((cred) => (
+					<div class="p-3.5 sm:p-4 rounded-xl sm:rounded-2xl bg-[#faf9f6] border border-stone-200/80 space-y-1.5 hover:border-emerald-200 transition-colors">
+						<h4 class="font-semibold text-stone-900 text-sm sm:text-base flex items-center gap-2">
+							<span class="w-2 h-2 rounded-full bg-[#5ad01f] shrink-0"></span>
+							{cred.title}
+						</h4>
+						<p class="text-xs sm:text-sm text-stone-600 leading-relaxed font-light">
+							{cred.description}
+						</p>
+					</div>
+				))}
+			</div>
+
+			<!-- CTA Link -->
+			<div class="pt-2">
+				<a 
+					href="#services" 
+					class="inline-flex items-center text-sm sm:text-base font-semibold text-emerald-900 hover:text-emerald-950 gap-1.5 group py-1"
+				>
+					Explore issues I can help you with
+					<svg class="w-4 h-4 text-[#5ad01f] transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+					</svg>
+				</a>
+			</div>
+
+		</div>
+
 	</div>
 </section>

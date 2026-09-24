@@ -10,7 +10,7 @@ const services = [
 	},
 	{
 		title: 'Neurodiversity',
-		description: '.'
+		description: 'Affirming, empathetic support for autistic, ADHD, and neurodivergent adults, exploring masking, executive functioning, sensory overwhelm, and burnout.'
 	},
 	{
 		title: 'Bereavement, Loss & Grief',
@@ -39,34 +39,34 @@ const services = [
 ];
 ---
 
-<section id="services" class="py-20 md:py-28 bg-stone-100/60">
+<section id="services" class="py-14 sm:py-20 md:py-28 bg-stone-100/60">
 	<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 		
 		<!-- Section Header -->
-		<div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+		<div class="text-center max-w-3xl mx-auto space-y-3 sm:space-y-4 mb-10 sm:mb-16">
 			<span class="text-xs font-semibold tracking-wider uppercase text-emerald-800 flex items-center justify-center gap-1.5">
 				<span class="w-1.5 h-1.5 rounded-full bg-[#5ad01f]"></span>
 				Areas of Support
 			</span>
-			<h2 class="font-serif text-3xl sm:text-4xl text-stone-900 leading-tight">
+			<h2 class="font-serif text-2xl sm:text-3xl lg:text-4xl text-stone-900 leading-snug sm:leading-tight">
 				How Online Therapy Can Help You
 			</h2>
-			<p class="text-stone-600 text-base sm:text-lg font-light leading-relaxed">
+			<p class="text-stone-600 text-sm sm:text-base md:text-lg font-light leading-relaxed">
 				Every person's journey is unique. Whatever challenges you are facing, we will work at your pace to bring clarity, healing, and meaningful change.
 			</p>
 		</div>
 
-		<!-- Services Grid (3x3 grid ensuring all 9 cards are equally big and prominent) -->
-		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+		<!-- Services Grid -->
+		<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
 			{services.map((item) => (
-				<div class="bg-white rounded-3xl p-6 sm:p-7 border border-stone-200/80 shadow-xs hover:shadow-md hover:border-emerald-300 transition-all duration-300 flex flex-col justify-between group">
-					<div class="space-y-3">
-						<div class="w-10 h-10 rounded-2xl bg-emerald-50 text-emerald-800 flex items-center justify-center group-hover:bg-[#5ad01f] group-hover:text-black transition-colors duration-300">
-							<svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				<div class="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-6 lg:p-7 border border-stone-200/80 shadow-2xs hover:shadow-md hover:border-emerald-300 transition-all duration-300 flex flex-col justify-between group">
+					<div class="space-y-2.5 sm:space-y-3">
+						<div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl sm:rounded-2xl bg-emerald-50 text-emerald-800 flex items-center justify-center group-hover:bg-[#5ad01f] group-hover:text-black transition-colors duration-300">
+							<svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
 							</svg>
 						</div>
-						<h3 class="font-serif text-lg font-medium text-stone-900 group-hover:text-emerald-950 transition-colors">
+						<h3 class="font-serif text-base sm:text-lg font-medium text-stone-900 group-hover:text-emerald-950 transition-colors">
 							{item.title}
 						</h3>
 						<p class="text-xs sm:text-sm text-stone-600 leading-relaxed font-light">

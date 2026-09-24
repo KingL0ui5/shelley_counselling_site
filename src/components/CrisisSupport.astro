@@ -39,48 +39,48 @@ const crisisResources = [
 ];
 ---
 
-<section id="crisis-support" class="py-16 sm:py-20 bg-stone-100/90 border-t-2 border-amber-300/80">
+<section id="crisis-support" class="py-12 sm:py-16 md:py-20 bg-stone-100/90 border-t-2 border-amber-300/80">
 	<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 		
 		<!-- Prominent Alert Banner Header -->
-		<div class="bg-white rounded-3xl p-8 sm:p-10 border border-stone-200 shadow-md space-y-8">
+		<div class="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 border border-stone-200 shadow-md space-y-6 sm:space-y-8">
 			
-			<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6 border-b border-stone-200">
+			<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3.5 sm:gap-4 pb-4 sm:pb-6 border-b border-stone-200">
 				<div class="flex items-center gap-3">
-					<div class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-900 flex items-center justify-center shrink-0 border border-amber-200">
-						<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+					<div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-amber-100 text-amber-900 flex items-center justify-center shrink-0 border border-amber-200">
+						<svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
 						</svg>
 					</div>
 					<div>
-						<h2 class="font-serif text-2xl sm:text-3xl font-medium text-stone-900 leading-snug">
-							Emergency &amp; Immediate Crisis Support
+						<h2 class="font-serif text-xl sm:text-2xl md:text-3xl font-medium text-stone-900 leading-snug">
+							Emergency &amp; Crisis Support
 						</h2>
 					</div>
 				</div>
 			</div>
 
 			<!-- Notice Paragraph -->
-			<div class="text-stone-700 text-sm sm:text-base leading-relaxed space-y-2 max-w-4xl">
+			<div class="text-stone-700 text-xs sm:text-sm md:text-base leading-relaxed space-y-2 max-w-4xl">
 				<p>
 					<strong>Please note:</strong> Shelley Liu Counselling is an appointment-based therapy practice and is <strong>not an emergency or crisis intervention service</strong>.
 				</p>
 				<p class="text-stone-600 font-light">
-					If you are in immediate danger, feeling unable to keep yourself safe, or experiencing an overwhelming acute mental health crisis, please reach out directly to the free, 24/7 professional support services below:
+					If you are in immediate danger, feeling unable to keep yourself safe, or experiencing an acute mental health crisis, please reach out directly to the free, 24/7 professional support services below:
 				</p>
 			</div>
 
 			<!-- Crisis Resource Cards Grid -->
-			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 pt-2">
+			<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-5 pt-1 sm:pt-2">
 				{crisisResources.map((res) => (
-					<div class="bg-[#faf9f6] rounded-2xl p-5 border border-stone-200/90 shadow-xs flex flex-col justify-between space-y-4 hover:border-stone-300 transition-colors">
-						<div class="space-y-2.5">
+					<div class="bg-[#faf9f6] rounded-xl sm:rounded-2xl p-4 sm:p-5 border border-stone-200/90 shadow-2xs flex flex-col justify-between space-y-3.5 sm:space-y-4 hover:border-stone-300 transition-colors">
+						<div class="space-y-2 sm:space-y-2.5">
 							<div class="flex items-center justify-between">
-								<span class={`text-[11px] font-semibold uppercase tracking-wider px-2.5 py-0.5 rounded-full border ${res.badgeColor}`}>
+								<span class={`text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider px-2.5 py-0.5 rounded-full border ${res.badgeColor}`}>
 									{res.badge}
 								</span>
 							</div>
-							<h3 class="font-serif text-lg font-medium text-stone-900">
+							<h3 class="font-serif text-base sm:text-lg font-medium text-stone-900">
 								{res.name}
 							</h3>
 							<p class="text-xs text-stone-600 font-light leading-relaxed">
@@ -91,7 +91,7 @@ const crisisResources = [
 						<div class="pt-2 border-t border-stone-200/60">
 							<a 
 								href={res.actionHref}
-								class="inline-flex items-center justify-center w-full py-2.5 px-4 text-xs font-bold uppercase tracking-wider text-stone-900 bg-white hover:bg-stone-100 border border-stone-300 rounded-xl shadow-xs transition-all duration-150 hover:shadow"
+								class="inline-flex items-center justify-center w-full min-h-[44px] py-2.5 sm:py-2.5 px-4 text-xs font-bold uppercase tracking-wider text-stone-900 bg-white hover:bg-stone-100 active:bg-stone-200 border border-stone-300 rounded-xl shadow-2xs transition-all duration-150"
 							>
 								{res.actionLabel}
 							</a>

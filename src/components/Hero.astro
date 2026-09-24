@@ -1,49 +1,49 @@
 ---
 ---
 
-<section class="relative overflow-hidden min-h-[85vh] flex items-center py-20 md:py-28 lg:py-36 bg-[#faf9f6]">
+<section class="relative overflow-hidden min-h-[75vh] sm:min-h-[85vh] flex items-center py-10 sm:py-16 md:py-24 lg:py-32 bg-[#faf9f6]">
 	<!-- Wallpaper Background Layer -->
 	<div 
 		class="absolute inset-0 bg-cover bg-center sm:bg-right-top bg-no-repeat transition-all duration-700"
 		style="background-image: url('/wallpaper.jpg');"
 		aria-hidden="true"
 	>
-		<!-- Subtle ambient scrim gradient: gently diffuses the background behind the text while letting the wallpaper shine through -->
-		<div class="absolute inset-0 bg-gradient-to-r from-[#faf9f6]/95 via-[#faf9f6]/70 to-stone-900/5 sm:to-transparent"></div>
-		<div class="absolute inset-0 bg-gradient-to-b from-white/30 via-transparent to-[#faf9f6]"></div>
+		<!-- Ambient scrim gradients: provides high contrast for mobile and desktop while preserving the wallpaper tone -->
+		<div class="absolute inset-0 bg-gradient-to-r from-[#faf9f6]/95 via-[#faf9f6]/75 to-stone-900/10 sm:to-transparent"></div>
+		<div class="absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-[#faf9f6]"></div>
 	</div>
 
 	<div class="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-		<!-- Left-aligned container distinguishing text and consultation box against the wallpaper -->
-		<div class="max-w-xl lg:max-w-2xl bg-white/85 sm:bg-[#faf9f6]/90 backdrop-blur-md border border-white/80 rounded-3xl p-8 sm:p-12 lg:p-14 shadow-2xl shadow-stone-900/5 space-y-8 text-left">
+		<!-- Main Hero Card -->
+		<div class="max-w-xl lg:max-w-2xl bg-white/90 sm:bg-[#faf9f6]/90 backdrop-blur-md border border-white/80 rounded-2xl sm:rounded-3xl p-6 sm:p-10 lg:p-14 shadow-xl sm:shadow-2xl shadow-stone-900/5 space-y-6 sm:space-y-8 text-left">
 			
-			<div class="space-y-6">
+			<div class="space-y-4 sm:space-y-6">
 				<div>
-					<h1 class="font-serif italic text-4xl sm:text-5xl lg:text-6xl font-normal tracking-tight text-emerald-950 leading-[1.15]">
+					<h1 class="font-serif italic text-3xl sm:text-5xl lg:text-6xl font-normal tracking-tight text-emerald-950 leading-tight sm:leading-[1.15]">
 						Counselling Services
 					</h1>
 
 					<!-- Line separator -->
-					<div class="w-16 h-0.5 bg-emerald-800/40 my-3.5 rounded-full"></div>
+					<div class="w-12 sm:w-16 h-0.5 bg-emerald-800/40 my-3 sm:my-3.5 rounded-full"></div>
 
-					<p class="font-serif text-base sm:text-lg text-stone-700 tracking-wide font-normal">
+					<p class="font-serif text-sm sm:text-base md:text-lg text-stone-700 tracking-wide font-normal">
 						Shelley Liu
 					</p>
 				</div>
 
-				<p class="text-base sm:text-lg lg:text-xl text-stone-700 leading-relaxed font-light">
+				<p class="text-sm sm:text-base lg:text-lg text-stone-700 leading-relaxed font-light">
 					A warm, confidential, and collaborative environment to help you explore life’s difficulties, overcome feelings of being stuck, and discover lasting emotional resilience from the comfort of your own space.
 				</p>
 			</div>
 
-			<!-- 'Book an Initial Consultation' Box (left-aligned) -->
-			<div class="pt-2">
+			<!-- Consultation CTA & Quick Trust Signals -->
+			<div class="pt-1 space-y-4">
 				<a 
 					href="#contact" 
-					class="inline-flex items-center justify-center px-8 py-4 text-sm sm:text-base font-semibold tracking-wide text-white bg-emerald-900 hover:bg-emerald-950 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 group"
+					class="w-full sm:w-auto inline-flex items-center justify-center px-6 sm:px-8 py-3.5 sm:py-4 text-sm sm:text-base font-semibold tracking-wide text-white bg-emerald-900 hover:bg-emerald-950 active:scale-[0.99] rounded-xl sm:rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 group text-center"
 				>
-					Book an Initial Consultation
-					<svg class="ml-3 w-4 h-4 sm:w-5 sm:h-5 text-[#5ad01f] group-hover:translate-x-1.5 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+					<span>Book an Initial Consultation</span>
+					<svg class="ml-2.5 sm:ml-3 w-4 h-4 sm:w-5 sm:h-5 text-[#5ad01f] group-hover:translate-x-1.5 transition-transform duration-200 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
 					</svg>
 				</a>
@@ -52,4 +52,3 @@
 		</div>
 	</div>
 </section>
-

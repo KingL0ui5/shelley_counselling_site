@@ -4,76 +4,116 @@ const navLinks = [
 	{ name: 'Areas Of Support', href: '/#services' },
 	{ name: 'How It Works', href: '/#how-it-works' },
 	{ name: 'Fees & FAQ', href: '/#fees-faq' },
-	{ name: 'Need Help Now', href: '/#crisis-support' },
+	{ name: 'Need Help Now', href: '/#crisis-support', isCrisis: true },
 ];
 ---
 
 <header class="sticky top-0 z-50 bg-[#faf9f6]/95 backdrop-blur-md border-b border-stone-200/80 transition-all duration-300">
 	<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-		<div class="flex items-center justify-between h-20">
+		<div class="flex items-center justify-between h-16 sm:h-20">
 			
 			<!-- Brand Logo -->
-			<a href="/" class="group flex flex-col">
-				<span class="font-serif text-2xl font-semibold tracking-tight text-emerald-950 group-hover:text-emerald-800 transition-colors">
+			<a href="/" class="group flex flex-col focus:outline-none">
+				<span class="font-serif text-xl sm:text-2xl font-semibold tracking-tight text-emerald-950 group-hover:text-emerald-800 transition-colors">
 					Shelley Liu
 				</span>
-				<span class="text-[11px] font-medium tracking-wider uppercase text-emerald-800 flex items-center gap-1.5">
+				<span class="text-[10px] sm:text-[11px] font-medium tracking-wider uppercase text-emerald-800 flex items-center gap-1.5">
 					<span class="w-1.5 h-1.5 rounded-full bg-[#5ad01f]"></span>
 					Counselling Service • MBACP
 				</span>
 			</a>
 
 			<!-- Desktop Navigation -->
-			<nav class="hidden md:flex items-center space-x-8">
+			<nav class="hidden md:flex items-center space-x-7 lg:space-x-8">
 				{navLinks.map((link) => (
 					<a 
 						href={link.href} 
-						class="text-sm font-medium text-stone-600 hover:text-emerald-950 transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#5ad01f] hover:after:w-full after:transition-all after:duration-300"
+						class={`text-sm font-medium transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:transition-all after:duration-300 text-stone-600 hover:text-emerald-950 after:bg-[#5ad01f] hover:after:w-full`}
 					>
 						{link.name}
 					</a>
 				))}
 				<a 
 					href="/#contact" 
-					class="inline-flex items-center justify-center px-5 py-2.5 text-xs font-semibold uppercase tracking-wider text-white bg-emerald-900 hover:bg-emerald-950 rounded-full shadow-sm hover:shadow transition-all duration-200"
+					class="inline-flex items-center justify-center px-5 py-2.5 text-xs font-semibold uppercase tracking-wider text-white bg-emerald-900 hover:bg-emerald-950 rounded-full shadow-xs hover:shadow transition-all duration-200"
 				>
 					Get in Touch
 				</a>
 			</nav>
 
-			<!-- Mobile menu button -->
-			<div class="flex md:hidden">
+			<!-- Mobile Action Group: Quick Contact + Hamburger Menu -->
+			<div class="flex items-center gap-2 md:hidden">
+				<a 
+					href="/#contact" 
+					class="inline-flex items-center justify-center px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-wider text-white bg-emerald-900 hover:bg-emerald-950 active:scale-95 rounded-full shadow-2xs transition-all"
+				>
+					Contact
+				</a>
+
 				<button 
 					type="button" 
 					id="mobile-menu-btn" 
-					class="p-2 rounded-lg text-stone-700 hover:text-emerald-950 hover:bg-stone-200/60 focus:outline-none"
-					aria-label="Toggle menu"
+					class="p-2 -mr-1 rounded-xl text-stone-700 hover:text-emerald-950 hover:bg-stone-200/60 active:bg-stone-200 focus:outline-none focus:ring-2 focus:ring-emerald-800/30 transition-colors"
+					aria-label="Toggle navigation menu"
+					aria-expanded="false"
+					aria-controls="mobile-menu"
 				>
-					<svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+					<!-- Hamburger icon -->
+					<svg id="menu-icon-hamburger" class="h-6 w-6 block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+					</svg>
+					<!-- Close (X) icon -->
+					<svg id="menu-icon-close" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
 					</svg>
 				</button>
 			</div>
 		</div>
 	</div>
 
-	<!-- Mobile menu container -->
-	<div id="mobile-menu" class="hidden md:hidden border-b border-stone-200 bg-[#faf9f6] px-4 pt-2 pb-6 space-y-3">
+	<!-- Mobile Dropdown Menu -->
+	<div 
+		id="mobile-menu" 
+		class="hidden md:hidden border-b border-stone-200/90 bg-[#faf9f6] px-4 pt-2 pb-6 space-y-1.5 shadow-lg animate-in fade-in duration-200"
+	>
 		{navLinks.map((link) => (
 			<a 
 				href={link.href} 
-				class="block text-base font-medium text-stone-700 hover:text-emerald-900 hover:bg-stone-200/50 px-3 py-2 rounded-lg transition-colors mobile-nav-link"
+				class={`flex items-center justify-between text-base font-medium px-3.5 py-2.5 rounded-xl transition-colors mobile-nav-link ${
+					link.isCrisis 
+						? 'text-amber-900 bg-amber-50/60 hover:bg-amber-100/70 border border-amber-200/50' 
+						: 'text-stone-700 hover:text-emerald-950 hover:bg-stone-200/50 active:bg-stone-200'
+				}`}
 			>
-				{link.name}
+				<span>{link.name}</span>
+				{link.isCrisis ? (
+					<span class="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full bg-amber-200 text-amber-900">
+						Urgent
+					</span>
+				) : (
+					<svg class="w-4 h-4 text-stone-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+					</svg>
+				)}
 			</a>
 		))}
-		<div class="pt-2">
+		
+		<div class="pt-3 space-y-2">
 			<a 
 				href="/#contact" 
-				class="block w-full text-center px-4 py-2.5 text-xs font-semibold uppercase tracking-wider text-white bg-emerald-900 hover:bg-emerald-950 rounded-full shadow-sm"
+				class="block w-full text-center py-3 px-4 text-xs font-semibold uppercase tracking-wider text-white bg-emerald-900 hover:bg-emerald-950 active:bg-emerald-950 rounded-xl shadow-xs transition-colors mobile-nav-link"
 			>
-				Get in Touch
+				Book an Initial Consultation
 			</a>
+			<div class="pt-1 text-center">
+				<a 
+					href="tel:116123" 
+					class="text-[11px] text-stone-500 hover:text-stone-800 transition-colors inline-flex items-center gap-1"
+				>
+					<span>Crisis support:</span>
+					<span class="font-medium text-emerald-900 underline">Call Samaritans 116 123</span>
+				</a>
+			</div>
 		</div>
 	</div>
 </header>
@@ -81,17 +121,52 @@ const navLinks = [
 <script>
 	const menuBtn = document.getElementById('mobile-menu-btn');
 	const mobileMenu = document.getElementById('mobile-menu');
+	const hamburgerIcon = document.getElementById('menu-icon-hamburger');
+	const closeIcon = document.getElementById('menu-icon-close');
 	const mobileLinks = document.querySelectorAll('.mobile-nav-link');
 
+	function toggleMenu(forceClose = false) {
+		if (!menuBtn || !mobileMenu) return;
+		const isCurrentlyOpen = !mobileMenu.classList.contains('hidden');
+		const shouldClose = forceClose || isCurrentlyOpen;
+
+		if (shouldClose) {
+			mobileMenu.classList.add('hidden');
+			menuBtn.setAttribute('aria-expanded', 'false');
+			hamburgerIcon?.classList.remove('hidden');
+			closeIcon?.classList.add('hidden');
+		} else {
+			mobileMenu.classList.remove('hidden');
+			menuBtn.setAttribute('aria-expanded', 'true');
+			hamburgerIcon?.classList.add('hidden');
+			closeIcon?.classList.remove('hidden');
+		}
+	}
+
 	if (menuBtn && mobileMenu) {
-		menuBtn.addEventListener('click', () => {
-			mobileMenu.classList.toggle('hidden');
+		menuBtn.addEventListener('click', (e) => {
+			e.stopPropagation();
+			toggleMenu();
 		});
 
 		mobileLinks.forEach(link => {
 			link.addEventListener('click', () => {
-				mobileMenu.classList.add('hidden');
+				toggleMenu(true);
 			});
+		});
+
+		// Close on click outside
+		document.addEventListener('click', (e) => {
+			if (!mobileMenu.contains(e.target as Node) && !menuBtn.contains(e.target as Node)) {
+				toggleMenu(true);
+			}
+		});
+
+		// Close on Escape key
+		document.addEventListener('keydown', (e) => {
+			if (e.key === 'Escape') {
+				toggleMenu(true);
+			}
 		});
 	}
 </script>

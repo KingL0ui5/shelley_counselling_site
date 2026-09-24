@@ -23,30 +23,30 @@ const steps = [
 ];
 ---
 
-<section id="how-it-works" class="py-20 md:py-28 bg-white border-b border-stone-200/80">
+<section id="how-it-works" class="py-14 sm:py-20 md:py-28 bg-white border-b border-stone-200/80">
 	<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 		
-		<div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+		<div class="text-center max-w-3xl mx-auto space-y-3 sm:space-y-4 mb-10 sm:mb-16">
 			<span class="text-xs font-semibold tracking-wider uppercase text-emerald-800 flex items-center justify-center gap-1.5">
 				<span class="w-1.5 h-1.5 rounded-full bg-[#5ad01f]"></span>
 				How It Works
 			</span>
-			<h2 class="font-serif text-3xl sm:text-4xl text-stone-900 leading-tight">
+			<h2 class="font-serif text-2xl sm:text-3xl lg:text-4xl text-stone-900 leading-snug sm:leading-tight">
 				The Process
 			</h2>
-			<p class="text-stone-600 text-base sm:text-lg font-light leading-relaxed">
+			<p class="text-stone-600 text-sm sm:text-base md:text-lg font-light leading-relaxed">
 				Starting therapy is a significant step. Here is what you can expect from the very first contact.
 			</p>
 		</div>
 
-		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+		<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
 			{steps.map((step) => (
-				<div class="relative flex flex-col justify-between p-6 rounded-3xl bg-[#faf9f6] border border-stone-200/80 hover:border-emerald-300 transition-all duration-300">
-					<div class="space-y-4">
-						<div class="font-serif text-3xl font-light text-emerald-800">
+				<div class="relative flex flex-col justify-between p-5 sm:p-6 rounded-2xl sm:rounded-3xl bg-[#faf9f6] border border-stone-200/80 hover:border-emerald-300 transition-all duration-300 shadow-2xs">
+					<div class="space-y-3 sm:space-y-4">
+						<div class="font-serif text-2xl sm:text-3xl font-light text-emerald-800">
 							{step.number}
 						</div>
-						<h3 class="font-serif text-xl font-medium text-stone-900">
+						<h3 class="font-serif text-lg sm:text-xl font-medium text-stone-900">
 							{step.title}
 						</h3>
 						<p class="text-xs sm:text-sm text-stone-600 leading-relaxed font-light">
@@ -58,14 +58,14 @@ const steps = [
 		</div>
 
 		<!-- Quotes / Practice Ethos Box in Forest/Emerald Palette -->
-		<div class="mt-16 bg-emerald-950 text-white rounded-3xl p-8 sm:p-12 shadow-xl relative overflow-hidden">
+		<div class="mt-10 sm:mt-16 bg-emerald-950 text-white rounded-2xl sm:rounded-3xl p-6 sm:p-10 md:p-12 shadow-xl relative overflow-hidden">
 			<div class="absolute -right-12 -bottom-12 w-64 h-64 bg-[#5ad01f]/10 rounded-full blur-2xl pointer-events-none"></div>
-			<div class="relative z-10 max-w-3xl space-y-4">
+			<div class="relative z-10 max-w-3xl space-y-3 sm:space-y-4">
 				<div class="inline-block text-[#5ad01f] text-xs font-semibold tracking-widest uppercase">
 					Client-Centred Philosophy
 				</div>
 
-				<p class="text-emerald-200 text-sm sm:text-base font-light leading-relaxed">
+				<p class="text-emerald-200 text-xs sm:text-sm md:text-base font-light leading-relaxed">
 					As a person-centred counsellor, I do not believe in one-size-fits-all solutions. Our therapy will be uniquely shaped around who you are, what you value, and what you need at this moment in your life.
 				</p>
 			</div>

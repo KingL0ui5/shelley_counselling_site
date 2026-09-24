@@ -48,7 +48,7 @@ const faqs = [
 							<h3 class="font-serif font-medium text-stone-900 text-base sm:text-lg">Initial Consultation</h3>
 							<span class="text-xs px-2.5 py-1 bg-emerald-50 text-emerald-800 rounded-full font-semibold border border-emerald-100 shrink-0">Free • 15 Mins</span>
 						</div>
-						<p class="text-xs sm:text-sm text-stone-600 font-light leading-relaxed">
+						<p class="text-sm sm:text-base text-stone-600 font-light leading-relaxed">
 							A brief, informal phone or video conversation to discuss what brings you to counselling, answer any questions, and see if we are a good therapeutic fit.
 						</p>
 					</div>
@@ -59,7 +59,7 @@ const faqs = [
 							<h3 class="font-serif font-medium text-stone-900 text-base sm:text-lg">Individual Session</h3>
 							<span class="text-xs px-2.5 py-1 bg-emerald-50 text-emerald-800 rounded-full font-semibold border border-emerald-100 shrink-0">£60 • 50 Mins</span>
 						</div>
-						<p class="text-xs sm:text-sm text-stone-600 font-light leading-relaxed">
+						<p class="text-sm sm:text-base text-stone-600 font-light leading-relaxed">
 							One-to-one weekly online counselling session conducted via a secure, encrypted video platform from the comfort and privacy of your own space.
 						</p>
 					</div>
@@ -82,13 +82,13 @@ const faqs = [
 				<div class="space-y-3 sm:space-y-4 pt-1">
 					{faqs.map((faq) => (
 						<details class="group bg-white rounded-xl sm:rounded-2xl border border-stone-200/80 p-4 sm:p-5 open:shadow-sm open:border-emerald-300 transition-all duration-200">
-							<summary class="flex justify-between items-center font-serif text-sm sm:text-base font-medium text-stone-900 cursor-pointer list-none select-none gap-3">
+							<summary class="flex justify-between items-center font-serif text-base sm:text-lg font-medium text-stone-900 cursor-pointer list-none select-none gap-3">
 								<span>{faq.q}</span>
 								<span class="w-6 h-6 rounded-full bg-stone-100 flex items-center justify-center text-stone-500 group-open:rotate-180 group-open:bg-[#5ad01f]/20 group-open:text-emerald-900 transition-transform duration-200 shrink-0 text-xs">
 									↓
 								</span>
 							</summary>
-							<p class="mt-2.5 sm:mt-3 text-xs sm:text-sm text-stone-600 font-light leading-relaxed border-t border-stone-100 pt-2.5 sm:pt-3">
+							<p class="mt-2.5 sm:mt-3 text-sm sm:text-base text-stone-600 font-light leading-relaxed border-t border-stone-100 pt-2.5 sm:pt-3">
 								{faq.a}
 							</p>
 						</details>

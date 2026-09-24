@@ -61,7 +61,7 @@ const crisisResources = [
 			</div>
 
 			<!-- Notice Paragraph -->
-			<div class="text-stone-700 text-xs sm:text-sm md:text-base leading-relaxed space-y-2 max-w-4xl">
+			<div class="text-stone-700 text-sm sm:text-base leading-relaxed space-y-2 max-w-4xl">
 				<p>
 					<strong>Please note:</strong> Shelley Liu Counselling is an appointment-based therapy practice and is <strong>not an emergency or crisis intervention service</strong>.
 				</p>
@@ -76,14 +76,14 @@ const crisisResources = [
 					<div class="bg-[#faf9f6] rounded-xl sm:rounded-2xl p-4 sm:p-5 border border-stone-200/90 shadow-2xs flex flex-col justify-between space-y-3.5 sm:space-y-4 hover:border-stone-300 transition-colors">
 						<div class="space-y-2 sm:space-y-2.5">
 							<div class="flex items-center justify-between">
-								<span class={`text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider px-2.5 py-0.5 rounded-full border ${res.badgeColor}`}>
+								<span class={`text-xs font-semibold uppercase tracking-wider px-2.5 py-0.5 rounded-full border ${res.badgeColor}`}>
 									{res.badge}
 								</span>
 							</div>
 							<h3 class="font-serif text-base sm:text-lg font-medium text-stone-900">
 								{res.name}
 							</h3>
-							<p class="text-xs text-stone-600 font-light leading-relaxed">
+							<p class="text-xs sm:text-sm text-stone-600 font-light leading-relaxed">
 								{res.description}
 							</p>
 						</div>
@@ -91,7 +91,7 @@ const crisisResources = [
 						<div class="pt-2 border-t border-stone-200/60">
 							<a 
 								href={res.actionHref}
-								class="inline-flex items-center justify-center w-full min-h-[44px] py-2.5 sm:py-2.5 px-4 text-xs font-bold uppercase tracking-wider text-stone-900 bg-white hover:bg-stone-100 active:bg-stone-200 border border-stone-300 rounded-xl shadow-2xs transition-all duration-150"
+								class="inline-flex items-center justify-center w-full min-h-[44px] py-2.5 sm:py-2.5 px-4 text-xs sm:text-sm font-bold uppercase tracking-wider text-stone-900 bg-white hover:bg-stone-100 active:bg-stone-200 border border-stone-300 rounded-xl shadow-2xs transition-all duration-150"
 							>
 								{res.actionLabel}
 							</a>

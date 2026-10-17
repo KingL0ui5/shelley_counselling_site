@@ -39,8 +39,19 @@ const services = [
 ];
 ---
 
-<section id="services" class="py-14 sm:py-20 md:py-28 bg-stone-100/60">
-	<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<section id="services" class="relative overflow-hidden py-14 sm:py-20 md:py-28 bg-[#faf9f6]">
+	<!-- Wallpaper Background Layer -->
+	<div 
+		class="absolute inset-0 bg-cover bg-center bg-no-repeat"
+		style="background-image: url('/wallpaper.jpg');"
+		aria-hidden="true"
+	>
+		<!-- Ambient scrim gradients: keeps text and cards readable while preserving the wallpaper tone -->
+		<div class="absolute inset-0 bg-[#faf9f6]/85"></div>
+		<div class="absolute inset-0 bg-gradient-to-b from-[#faf9f6] via-transparent to-[#faf9f6]"></div>
+	</div>
+
+	<div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 		
 		<!-- Section Header -->
 		<div class="text-center max-w-3xl mx-auto space-y-3 sm:space-y-4 mb-10 sm:mb-16">
@@ -63,7 +74,7 @@ const services = [
 					<div class="space-y-2.5 sm:space-y-3">
 						<div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl sm:rounded-2xl bg-emerald-50 text-emerald-800 flex items-center justify-center group-hover:bg-[#5ad01f] group-hover:text-black transition-colors duration-300">
 							<svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
 							</svg>
 						</div>
 						<h3 class="font-serif text-base sm:text-lg font-medium text-stone-900 group-hover:text-emerald-950 transition-colors">

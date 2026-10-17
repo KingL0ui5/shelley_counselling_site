@@ -31,6 +31,14 @@
 						<div class="text-xs text-stone-500 font-light">Replies typically within 24–48 hours</div>
 					</div>
 
+					<!-- Telephone -->
+					<div class="w-full p-4 sm:p-5 rounded-xl sm:rounded-2xl bg-[#faf9f6] border border-stone-200/80 space-y-1.5 shadow-2xs">
+						<div class="text-xs sm:text-sm font-semibold text-stone-900">Telephone</div>
+						<a href="tel:+447434125934" class="text-sm sm:text-base font-medium text-emerald-900 hover:text-emerald-950 transition-colors block">
+							+44 7434 125934
+						</a>
+					</div>
+
 					<!-- In-Person Availability Disclaimer -->
 					<div class="w-full p-3.5 sm:p-4 rounded-xl sm:rounded-2xl bg-[#faf9f6] border border-stone-200/80 text-xs sm:text-sm text-stone-600 font-light flex items-start gap-2.5 shadow-2xs">
 						<svg class="w-4 h-4 text-emerald-800 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -48,8 +56,11 @@
 				<div class="bg-[#faf9f6] border border-stone-200 rounded-2xl sm:rounded-3xl p-5 sm:p-7 md:p-8 shadow-2xs">
 					
 					<h3 class="font-serif text-xl sm:text-2xl font-normal text-stone-900 mb-1">Send a Message</h3>
-					<p class="text-sm sm:text-base text-stone-600 font-light mb-5 sm:mb-6">
+					<p class="text-sm sm:text-base text-stone-600 font-light mb-1.5">
 						Please fill in your details below and I will get back to you promptly.
+					</p>
+					<p class="text-xs text-stone-500 font-light mb-5 sm:mb-6">
+						Fields marked with an asterisk (*) are required.
 					</p>
 
 					<form 
@@ -103,6 +114,21 @@
 							></textarea>
 						</div>
 
+						<!-- Consent Checkbox -->
+						<div class="flex items-start gap-2.5">
+							<input 
+								type="checkbox" 
+								id="consent" 
+								name="consent" 
+								value="Agreed to Privacy Policy and Terms and Conditions"
+								required 
+								class="mt-0.5 w-4 h-4 shrink-0 rounded border-stone-300 text-emerald-900 accent-emerald-900 focus:ring-2 focus:ring-emerald-700 cursor-pointer"
+							/>
+							<label for="consent" class="text-xs sm:text-sm text-stone-600 font-light leading-relaxed cursor-pointer">
+								I have read and agree to the <a href="/privacy-policy" target="_blank" class="text-emerald-900 font-medium hover:underline">Privacy Policy</a> and <a href="/terms-and-conditions" target="_blank" class="text-emerald-900 font-medium hover:underline">Terms and Conditions</a> *
+							</label>
+						</div>
+
 						<!-- Success Message -->
 						<div id="form-success" class="hidden p-4 rounded-xl sm:rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-950 text-xs sm:text-sm font-light leading-relaxed flex items-start gap-2.5">
 							<svg class="w-5 h-5 text-emerald-700 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -136,6 +162,10 @@
 								<path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
 							</svg>
 						</button>
+
+						<p class="text-xs text-stone-500 font-light leading-relaxed">
+							Please note that while this form is encrypted, standard email is not 100% secure. Please only share minimal information here. We will discuss your detailed circumstances safely during our first session.
+						</p>
 					</form>
 
 				</div>

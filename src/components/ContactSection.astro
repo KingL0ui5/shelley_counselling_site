@@ -72,7 +72,7 @@
 						<!-- FormSubmit Settings -->
 						<input type="hidden" name="_subject" value="New Website Counselling Enquiry" />
 						<input type="hidden" name="_template" value="table" />
-						<input type="hidden" name="_captcha" value="false" />
+						<input type="hidden" name="_captcha" value="true" />
 						<input type="hidden" name="_next" id="form-next-url" value="/thank-you" />
 						<!-- Anti-spam Honeypot -->
 						<input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
@@ -164,6 +164,10 @@
 						</button>
 
 						<p class="text-xs text-stone-500 font-light leading-relaxed">
+							After clicking send, you will be asked to complete a quick captcha to confirm you are human before your message is delivered.
+						</p>
+
+						<p class="text-xs text-stone-500 font-light leading-relaxed">
 							Please note that while this form is encrypted, standard email is not 100% secure. Please only share minimal information here. We will discuss your detailed circumstances safely during our first session.
 						</p>
 					</form>
@@ -202,45 +206,17 @@
 	}
 
 	if (form && submitBtn && btnText && btnSpinner && successBox && errorBox) {
-		form.addEventListener('submit', async (e) => {
-			e.preventDefault();
-
-			// Clear previous notifications & set loading state
+		form.addEventListener('submit', () => {
+			// Standard submission so FormSubmit can show its captcha page,
+			// then redirect to /thank-you via the _next field.
 			successBox.classList.add('hidden');
 			errorBox.classList.add('hidden');
+			if (nextInput) {
+				nextInput.value = window.location.origin + '/thank-you';
+			}
 			submitBtn.disabled = true;
 			btnText.textContent = 'Sending Message...';
 			btnSpinner.classList.remove('hidden');
-
-			try {
-				const formData = new FormData(form);
-				const rawAction = form.getAttribute('action') || 'https://formsubmit.co/ajax/shelleyliucounsellingpractice@gmail.com';
-				const ajaxUrl = rawAction.includes('/ajax/') ? rawAction : rawAction.replace('formsubmit.co/', 'formsubmit.co/ajax/');
-
-				const response = await fetch(ajaxUrl, {
-					method: "POST",
-					headers: {
-						'Accept': 'application/json'
-					},
-					body: formData
-				});
-
-				const result = await response.json();
-
-				if (response.ok && (result.success === "true" || result.success === true || result.message)) {
-					// Route immediately to dedicated /thank-you page
-					window.location.href = '/thank-you';
-				} else {
-					throw new Error(result.message || 'Form submission failed');
-				}
-			} catch (error) {
-				console.error('AJAX submission failed, falling back to standard submission with _next redirect:', error);
-				// If AJAX fetch is interrupted or fails, submit normally using _next redirect
-				if (nextInput) {
-					nextInput.value = window.location.origin + '/thank-you';
-				}
-				form.submit();
-			}
 		});
 	}
 </script>

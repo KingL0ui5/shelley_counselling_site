@@ -1,4 +1,5 @@
 ---
+const TURNSTILE_SITE_KEY = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
 ---
 
 <section id="contact" class="py-12 sm:py-16 md:py-20 bg-white border-t border-stone-200/80">
@@ -65,15 +66,10 @@
 
 					<form 
 						id="contact-form" 
-						action="https://formsubmit.co/shelleyliucounsellingpractice@gmail.com" 
+						action="/api/contact" 
 						method="POST" 
 						class="space-y-4"
 					>
-						<!-- FormSubmit Settings -->
-						<input type="hidden" name="_subject" value="New Website Counselling Enquiry" />
-						<input type="hidden" name="_template" value="table" />
-						<input type="hidden" name="_captcha" value="true" />
-						<input type="hidden" name="_next" id="form-next-url" value="/thank-you" />
 						<!-- Anti-spam Honeypot -->
 						<input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
 
@@ -129,6 +125,25 @@
 							</label>
 						</div>
 
+						<!-- Human Verification (Cloudflare Turnstile) -->
+						{TURNSTILE_SITE_KEY && (
+							<div>
+								<div
+									id="turnstile-widget"
+									class="cf-turnstile"
+									data-sitekey={TURNSTILE_SITE_KEY}
+									data-theme="light"
+									data-callback="onTurnstileVerified"
+									data-expired-callback="onTurnstileExpired"
+									data-error-callback="onTurnstileExpired"
+								>
+								</div>
+								<p id="turnstile-hint" class="hidden mt-1.5 text-xs text-amber-700 font-light">
+									Please complete the verification check above before sending.
+								</p>
+							</div>
+						)}
+
 						<!-- Success Message -->
 						<div id="form-success" class="hidden p-4 rounded-xl sm:rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-950 text-xs sm:text-sm font-light leading-relaxed flex items-start gap-2.5">
 							<svg class="w-5 h-5 text-emerald-700 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -164,7 +179,7 @@
 						</button>
 
 						<p class="text-xs text-stone-500 font-light leading-relaxed">
-							After clicking send, you will be asked to complete a quick captcha to confirm you are human before your message is delivered.
+							A quick, automated verification check confirms you are human before your message is delivered.
 						</p>
 
 						<p class="text-xs text-stone-500 font-light leading-relaxed">
@@ -180,6 +195,8 @@
 	</div>
 </section>
 
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
 <script>
 	const form = document.getElementById('contact-form') as HTMLFormElement | null;
 	const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement | null;
@@ -187,36 +204,84 @@
 	const btnSpinner = document.getElementById('btn-spinner');
 	const successBox = document.getElementById('form-success');
 	const errorBox = document.getElementById('form-error');
-	const nextInput = document.getElementById('form-next-url') as HTMLInputElement | null;
+	const turnstileWidget = document.getElementById('turnstile-widget');
+	const turnstileHint = document.getElementById('turnstile-hint');
 
-	// Populate absolute URL for FormSubmit fallback redirect
-	if (nextInput && typeof window !== 'undefined') {
-		nextInput.value = window.location.origin + '/thank-you';
-	}
+	let turnstileToken = '';
 
-	// Flag check on page load (in case redirected with query parameters)
-	if (typeof window !== 'undefined') {
-		const urlParams = new URLSearchParams(window.location.search);
-		if (urlParams.get('success') === 'true' || urlParams.get('submitted') === 'true') {
-			if (successBox) {
-				successBox.classList.remove('hidden');
-				successBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-			}
+	// Invoked by the Cloudflare Turnstile widget once a visitor is verified.
+	(window as any).onTurnstileVerified = (token: string) => {
+		turnstileToken = token;
+		turnstileHint?.classList.add('hidden');
+	};
+
+	// Invoked when the Turnstile token expires or verification errors out.
+	(window as any).onTurnstileExpired = () => {
+		turnstileToken = '';
+	};
+
+	function resetTurnstile() {
+		turnstileToken = '';
+		const turnstile = (window as any).turnstile;
+		if (turnstileWidget && turnstile?.reset) {
+			turnstile.reset(turnstileWidget);
 		}
 	}
 
+	function setSubmitting(isSubmitting: boolean) {
+		if (!submitBtn || !btnText || !btnSpinner) return;
+		submitBtn.disabled = isSubmitting;
+		btnText.textContent = isSubmitting ? 'Sending Message...' : 'Send Message';
+		btnSpinner.classList.toggle('hidden', !isSubmitting);
+	}
+
 	if (form && submitBtn && btnText && btnSpinner && successBox && errorBox) {
-		form.addEventListener('submit', () => {
-			// Standard submission so FormSubmit can show its captcha page,
-			// then redirect to /thank-you via the _next field.
+		form.addEventListener('submit', async (e) => {
+			e.preventDefault();
+
 			successBox.classList.add('hidden');
 			errorBox.classList.add('hidden');
-			if (nextInput) {
-				nextInput.value = window.location.origin + '/thank-you';
+
+			// Require a completed Turnstile check before attempting to submit.
+			if (turnstileWidget && !turnstileToken) {
+				turnstileHint?.classList.remove('hidden');
+				turnstileHint?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+				return;
 			}
-			submitBtn.disabled = true;
-			btnText.textContent = 'Sending Message...';
-			btnSpinner.classList.remove('hidden');
+
+			setSubmitting(true);
+
+			try {
+				const formData = new FormData(form);
+				const payload: Record<string, string> = {};
+				formData.forEach((value, key) => {
+					payload[key] = typeof value === 'string' ? value : '';
+				});
+				if (turnstileToken) {
+					payload['cf-turnstile-response'] = turnstileToken;
+				}
+
+				const response = await fetch('/api/contact', {
+					method: 'POST',
+					headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+					body: JSON.stringify(payload),
+				});
+
+				const result = await response.json().catch(() => ({}));
+
+				if (response.ok && result.success) {
+					window.location.href = '/thank-you';
+					return;
+				}
+
+				throw new Error(result.message || 'Form submission failed');
+			} catch (error) {
+				console.error('Contact form submission failed:', error);
+				errorBox.classList.remove('hidden');
+				errorBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+				setSubmitting(false);
+				resetTurnstile();
+			}
 		});
 	}
 </script>
